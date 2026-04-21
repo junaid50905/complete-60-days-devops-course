@@ -60,6 +60,79 @@ touch file.txt
 
 ---
 
+### 📁 `mkdir` (Make Directory)
+
+Used to create new directories (folders).
+
+---
+
+### 🔹 Basic Usage
+
+```bash
+mkdir folder_name
+```
+
+👉 Example:
+
+```bash
+mkdir projects
+```
+
+This creates a folder named `projects` in the current directory.
+
+---
+
+### 🔹 Create Multiple Directories
+
+```bash
+mkdir dir1 dir2 dir3
+```
+
+---
+
+### 🔹 Create Nested Directories (Important 🔥)
+
+```bash
+mkdir -p parent/child/grandchild
+```
+
+👉 Example:
+
+```bash
+mkdir -p app/controllers/api
+```
+
+* `-p` automatically creates all missing parent directories
+* Without `-p`, it will throw an error if parent doesn’t exist
+
+---
+
+### 🔹 Set Permissions While Creating
+
+```bash
+mkdir -m 755 myfolder
+```
+
+---
+
+### ⚠️ Common Errors
+
+* ❌ Folder already exists → `File exists`
+* ❌ Missing parent directory (without `-p`)
+
+---
+
+### 🔑 Quick Summary
+
+| Command         | Meaning                 |
+| --------------- | ----------------------- |
+| `mkdir name`    | Create one folder       |
+| `mkdir a b c`   | Create multiple folders |
+| `mkdir -p path` | Create nested folders   |
+| `mkdir -m 755`  | Set permission          |
+
+---
+
 ### 📁 `cd` (Change Directory)
 
 Moves you between directories.
