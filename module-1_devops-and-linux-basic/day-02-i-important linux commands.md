@@ -1,5 +1,8 @@
+# 🐧 Linux Basic Commands Cheat Sheet
 
-### 📍 `pwd` (Print Working Directory)
+---
+
+## 📍 `pwd` — Print Working Directory
 
 Shows your current location in the filesystem.
 
@@ -7,153 +10,43 @@ Shows your current location in the filesystem.
 pwd
 ```
 
-👉 Output example:
+👉 Example output:
 
-```
+```bash
 /home/junaid/projects
 ```
 
 ---
 
-### 📂 `ls` (List)
+## 📂 `ls` — List Directory Contents
 
-Lists files and directories in the current directory.
+Displays files and folders in the current directory.
 
 ```bash
 ls
 ```
 
-Common variations:
+### 🔹 Common options:
 
 ```bash
-ls -l   # detailed list (permissions, size, date) ll do the same thing
-ls -a   # show hidden files (starting with .)
+ls -l   # long format (permissions, size, date)
+ls -a   # show hidden files
+ls -la  # combine both
 ```
+
+👉 Note: `ll` is usually an alias for `ls -l`
 
 ---
 
-### 📄 `cat` (Concatenate)
+## 📄 `cat` — View File Content
 
-Used to view or combine file contents.
+Displays file contents in the terminal.
 
 ```bash
 cat file.txt
 ```
 
-### 📄 `less` (View file content page by page)
-
-`less` is used to **read large files easily** in the terminal without opening them in an editor.
-
-```bash id="q9k2aa"
-less file.txt
-```
-
----
-
-### 🔹 Why use `less`?
-
-* Displays content **one screen at a time**
-* Faster than `cat` for large files
-* Does **not load the whole file at once**
-
----
-
-### 🔹 Navigation inside `less`
-
-| Key     | Action                   |
-| ------- | ------------------------ |
-| `Space` | Next page                |
-| `b`     | Previous page            |
-| `Enter` | Scroll down line by line |
-| `/text` | Search forward           |
-| `n`     | Next search result       |
-| `q`     | Quit                     |
-
----
-
-### 🔹 Example
-
-```bash id="m8zq0x"
-less /var/log/syslog
-```
-
----
-
----
-
-## ✏️ `vi` (Text Editor)
-
-`vi` is a **powerful terminal-based text editor** used for editing files.
-
-```bash id="v3k1rz"
-vi file.txt
-```
-
----
-
-### 🔹 Two main modes in `vi`
-
-1. **Command Mode** (default)
-2. **Insert Mode** (for typing)
-
----
-
-### 🔹 Switching Modes
-
-| Key   | Action                 |
-| ----- | ---------------------- |
-| `i`   | Enter insert mode      |
-| `Esc` | Return to command mode |
-
----
-
-### 🔹 Basic Commands in `vi`
-
-| Command | Action              |
-| ------- | ------------------- |
-| `i`     | Start editing       |
-| `:w`    | Save file           |
-| `:q`    | Quit                |
-| `:wq`   | Save and quit       |
-| `:q!`   | Quit without saving |
-
----
-
-### 🔹 Example Workflow
-
-```bash id="2l6c1d"
-vi file.txt
-```
-
-1. Press `i` → start typing
-2. Write content
-3. Press `Esc`
-4. Type `:wq` → save and exit
-
----
-
-### 🔥 Difference between `less` and `vi`
-
-| Feature      | `less`     | `vi`       |
-| ------------ | ---------- | ---------- |
-| Purpose      | View files | Edit files |
-| Editing      | ❌ No       | ✅ Yes      |
-| Navigation   | Yes        | Yes        |
-| Save changes | ❌ No       | ✅ Yes      |
-
----
-
-### 🔑 Quick Summary
-
-* `less` → view large files safely
-* `vi` → edit files directly in terminal
-
----
-
-
-👉 Displays the content of `file.txt`
-
-You can also combine files:
+### 🔹 Combine files:
 
 ```bash
 cat file1.txt file2.txt > merged.txt
@@ -161,64 +54,74 @@ cat file1.txt file2.txt > merged.txt
 
 ---
 
-### 📁 `touch`
+## 📄 `less` — View Large Files (Paged View)
 
-Creates a new empty file (or updates timestamp if it exists).
+Used for reading large files easily.
 
 ```bash
-touch file.txt
+less file.txt
 ```
 
+### 🔹 Navigation:
+
+| Key     | Action        |
+| ------- | ------------- |
+| `Space` | Next page     |
+| `b`     | Previous page |
+| `Enter` | Scroll down   |
+| `/text` | Search        |
+| `n`     | Next match    |
+| `q`     | Quit          |
+
 ---
 
-### 📁 `mkdir` (Make Directory)
+## ✏️ `vi` — Terminal Text Editor
 
-Used to create new directories (folders).
+Used to create and edit files.
+
+```bash
+vi file.txt
+```
+
+### 🔹 Modes:
+
+* **Command mode** (default)
+* **Insert mode** (`i` to edit)
+
+### 🔹 Basic commands:
+
+| Command | Action               |
+| ------- | -------------------- |
+| `i`     | Insert mode          |
+| `Esc`   | Back to command mode |
+| `:w`    | Save                 |
+| `:q`    | Quit                 |
+| `:wq`   | Save & quit          |
+| `:q!`   | Quit without saving  |
 
 ---
 
-### 🔹 Basic Usage
+## 📁 `mkdir` — Create Directory
+
+Creates folders.
 
 ```bash
 mkdir folder_name
 ```
 
-👉 Example:
-
-```bash
-mkdir projects
-```
-
-This creates a folder named `projects` in the current directory.
-
----
-
-### 🔹 Create Multiple Directories
+### 🔹 Multiple folders:
 
 ```bash
 mkdir dir1 dir2 dir3
 ```
 
----
-
-### 🔹 Create Nested Directories (Important 🔥)
+### 🔹 Nested folders:
 
 ```bash
 mkdir -p parent/child/grandchild
 ```
 
-👉 Example:
-
-```bash
-mkdir -p app/controllers/api
-```
-
-* `-p` automatically creates all missing parent directories
-* Without `-p`, it will throw an error if parent doesn’t exist
-
----
-
-### 🔹 Set Permissions While Creating
+### 🔹 With permissions:
 
 ```bash
 mkdir -m 755 myfolder
@@ -226,83 +129,76 @@ mkdir -m 755 myfolder
 
 ---
 
-### ⚠️ Common Errors
+## 📄 `touch` — Create File
 
-* ❌ Folder already exists → `File exists`
-* ❌ Missing parent directory (without `-p`)
+Creates an empty file or updates timestamp.
 
----
-
-### 🔑 Quick Summary
-
-| Command         | Meaning                 |
-| --------------- | ----------------------- |
-| `mkdir name`    | Create one folder       |
-| `mkdir a b c`   | Create multiple folders |
-| `mkdir -p path` | Create nested folders   |
-| `mkdir -m 755`  | Set permission          |
+```bash
+touch file.txt
+```
 
 ---
 
-### 📁 `cd` (Change Directory)
+## 📂 `cd` — Change Directory
 
-Moves you between directories.
+Move between directories.
 
 ```bash
 cd folder_name
 ```
 
-Examples:
+### 🔹 Shortcuts:
 
 ```bash
-cd ..        # go one level up
-cd ~         # go to home directory
-cd /         # go to root directory
+cd ..   # go back
+cd ~    # home directory
+cd /    # root directory
 ```
 
 ---
 
-### ❌ `rm` (Remove)
+## ❌ `rm` — Remove Files/Directories
 
-Deletes files (and optionally directories).
+Deletes files permanently.
 
 ```bash
 rm file.txt
 ```
 
-⚠️ Be careful — it permanently deletes files.
-
-Useful options:
+### 🔹 Options:
 
 ```bash
-rm -r folder   # delete directory and its contents
-rm -f file     # force delete without confirmation
+rm -r folder   # remove directory recursively
+rm -f file     # force delete
 ```
+
+⚠️ No recycle bin — use carefully.
 
 ---
 
-### 📁 `rmdir` (Remove Directory)
+## 📁 `rmdir` — Remove Empty Directory
 
-Deletes **empty directories only**.
+Deletes only empty folders.
 
 ```bash
 rmdir folder_name
 ```
 
-👉 If the directory is not empty, it will fail.
-
 ---
 
-### 🔑 Quick Summary
+# 🔑 Quick Summary Table
 
-| Command | Purpose                |
-| ------- | ---------------------- |
-| `pwd`   | Show current directory |
-| `ls`    | List files/folders     |
-| `cat`   | View file content      |
-| `touch` | Create file            |
-| `cd`    | Change directory       |
-| `rm`    | Delete files/folders   |
-| `rmdir` | Delete empty folder    |
+| Command | Purpose                       |
+| ------- | ----------------------------- |
+| `pwd`   | Show current directory        |
+| `ls`    | List files and folders        |
+| `cat`   | View file content             |
+| `less`  | View large files page by page |
+| `vi`    | Edit files                    |
+| `mkdir` | Create directories            |
+| `touch` | Create files                  |
+| `cd`    | Change directory              |
+| `rm`    | Delete files/folders          |
+| `rmdir` | Delete empty folders          |
 
 
