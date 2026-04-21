@@ -1,4 +1,4 @@
-# 🐧 Linux Basic Commands Cheat Sheet
+# 🐧 File System Navigation & Manipulation
 
 ---
 
