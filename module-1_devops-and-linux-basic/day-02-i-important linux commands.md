@@ -1,6 +1,3 @@
-Here’s a clear, practical explanation of each Linux command:
-
----
 
 ### 📍 `pwd` (Print Working Directory)
 
