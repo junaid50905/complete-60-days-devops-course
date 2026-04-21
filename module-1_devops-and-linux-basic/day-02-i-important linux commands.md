@@ -40,6 +40,117 @@ Used to view or combine file contents.
 cat file.txt
 ```
 
+### 📄 `less` (View file content page by page)
+
+`less` is used to **read large files easily** in the terminal without opening them in an editor.
+
+```bash id="q9k2aa"
+less file.txt
+```
+
+---
+
+### 🔹 Why use `less`?
+
+* Displays content **one screen at a time**
+* Faster than `cat` for large files
+* Does **not load the whole file at once**
+
+---
+
+### 🔹 Navigation inside `less`
+
+| Key     | Action                   |
+| ------- | ------------------------ |
+| `Space` | Next page                |
+| `b`     | Previous page            |
+| `Enter` | Scroll down line by line |
+| `/text` | Search forward           |
+| `n`     | Next search result       |
+| `q`     | Quit                     |
+
+---
+
+### 🔹 Example
+
+```bash id="m8zq0x"
+less /var/log/syslog
+```
+
+---
+
+---
+
+## ✏️ `vi` (Text Editor)
+
+`vi` is a **powerful terminal-based text editor** used for editing files.
+
+```bash id="v3k1rz"
+vi file.txt
+```
+
+---
+
+### 🔹 Two main modes in `vi`
+
+1. **Command Mode** (default)
+2. **Insert Mode** (for typing)
+
+---
+
+### 🔹 Switching Modes
+
+| Key   | Action                 |
+| ----- | ---------------------- |
+| `i`   | Enter insert mode      |
+| `Esc` | Return to command mode |
+
+---
+
+### 🔹 Basic Commands in `vi`
+
+| Command | Action              |
+| ------- | ------------------- |
+| `i`     | Start editing       |
+| `:w`    | Save file           |
+| `:q`    | Quit                |
+| `:wq`   | Save and quit       |
+| `:q!`   | Quit without saving |
+
+---
+
+### 🔹 Example Workflow
+
+```bash id="2l6c1d"
+vi file.txt
+```
+
+1. Press `i` → start typing
+2. Write content
+3. Press `Esc`
+4. Type `:wq` → save and exit
+
+---
+
+### 🔥 Difference between `less` and `vi`
+
+| Feature      | `less`     | `vi`       |
+| ------------ | ---------- | ---------- |
+| Purpose      | View files | Edit files |
+| Editing      | ❌ No       | ✅ Yes      |
+| Navigation   | Yes        | Yes        |
+| Save changes | ❌ No       | ✅ Yes      |
+
+---
+
+### 🔑 Quick Summary
+
+* `less` → view large files safely
+* `vi` → edit files directly in terminal
+
+---
+
+
 👉 Displays the content of `file.txt`
 
 You can also combine files:
