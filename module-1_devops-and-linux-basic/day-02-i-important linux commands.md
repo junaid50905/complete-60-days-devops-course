@@ -26,7 +26,7 @@ ls
 Common variations:
 
 ```bash
-ls -l   # detailed list (permissions, size, date)
+ls -l   # detailed list (permissions, size, date) ll do the same thing
 ls -a   # show hidden files (starting with .)
 ```
 
