@@ -1,16 +1,14 @@
-# 1. 🐧 File System Navigation & Manipulation
-
----
+# 📁 1. File System Navigation & Manipulation
 
 ## 📍 `pwd` — Print Working Directory
 
-Shows your current location in the filesystem.
+Displays your current directory path.
 
 ```bash
 pwd
 ```
 
-👉 Example output:
+**Example:**
 
 ```bash
 /home/junaid/projects
@@ -20,33 +18,33 @@ pwd
 
 ## 📂 `ls` — List Directory Contents
 
-Displays files and folders in the current directory.
+Shows files and directories.
 
 ```bash
 ls
 ```
 
-### 🔹 Common options:
+### 🔹 Common Options
 
 ```bash
-ls -l   # long format (permissions, size, date)
-ls -a   # show hidden files
-ls -la  # combine both
+ls -l    # detailed list (permissions, size, date)
+ls -a    # include hidden files
+ls -la   # combine both
 ```
 
-👉 Note: `ll` is usually an alias for `ls -l`
+💡 Tip: `ll` is often an alias for `ls -l`
 
 ---
 
 ## 📄 `cat` — View File Content
 
-Displays file contents in the terminal.
+Display contents of a file.
 
 ```bash
 cat file.txt
 ```
 
-### 🔹 Combine files:
+### 🔹 Merge Files
 
 ```bash
 cat file1.txt file2.txt > merged.txt
@@ -54,84 +52,70 @@ cat file1.txt file2.txt > merged.txt
 
 ---
 
-## 📄 `less` — View Large Files (Paged View)
+## 📄 `less` — Read Large Files
 
-Used for reading large files easily.
+Opens file in a scrollable view.
 
 ```bash
 less file.txt
 ```
 
-### 🔹 Navigation:
+### 🔹 Navigation Keys
 
-| Key     | Action        |
-| ------- | ------------- |
-| `Space` | Next page     |
-| `b`     | Previous page |
-| `Enter` | Scroll down   |
-| `/text` | Search        |
-| `n`     | Next match    |
-| `q`     | Quit          |
+| Key   | Action        |
+| ----- | ------------- |
+| Space | Next page     |
+| b     | Previous page |
+| Enter | Scroll down   |
+| /text | Search        |
+| n     | Next match    |
+| q     | Quit          |
 
 ---
 
-## ✏️ `vi` — Terminal Text Editor
+## ✏️ `vi` — Text Editor
 
-Used to create and edit files.
+Create and edit files in terminal.
 
 ```bash
 vi file.txt
 ```
 
-### 🔹 Modes:
+### 🔹 Modes
 
 * **Command mode** (default)
-* **Insert mode** (`i` to edit)
+* **Insert mode** → press `i`
 
-### 🔹 Basic commands:
+### 🔹 Common Commands
 
-| Command | Action               |
-| ------- | -------------------- |
-| `i`     | Insert mode          |
-| `Esc`   | Back to command mode |
-| `:w`    | Save                 |
-| `:q`    | Quit                 |
-| `:wq`   | Save & quit          |
-| `:q!`   | Quit without saving  |
+| Command | Action            |
+| ------- | ----------------- |
+| i       | Enter insert mode |
+| Esc     | Back to command   |
+| :w      | Save              |
+| :q      | Quit              |
+| :wq     | Save & quit       |
+| :q!     | Force quit        |
 
 ---
 
 ## 📁 `mkdir` — Create Directory
 
-Creates folders.
-
 ```bash
 mkdir folder_name
 ```
 
-### 🔹 Multiple folders:
+### 🔹 Examples
 
 ```bash
 mkdir dir1 dir2 dir3
-```
-
-### 🔹 Nested folders:
-
-```bash
 mkdir -p parent/child/grandchild
-```
-
-### 🔹 With permissions:
-
-```bash
 mkdir -m 755 myfolder
 ```
 
 ---
 
 ## 📄 `touch` — Create File
-
-Creates an empty file or updates timestamp.
 
 ```bash
 touch file.txt
@@ -141,13 +125,11 @@ touch file.txt
 
 ## 📂 `cd` — Change Directory
 
-Move between directories.
-
 ```bash
 cd folder_name
 ```
 
-### 🔹 Shortcuts:
+### 🔹 Shortcuts
 
 ```bash
 cd ..   # go back
@@ -159,26 +141,22 @@ cd /    # root directory
 
 ## ❌ `rm` — Remove Files/Directories
 
-Deletes files permanently.
-
 ```bash
 rm file.txt
 ```
 
-### 🔹 Options:
+### 🔹 Options
 
 ```bash
-rm -r folder   # remove directory recursively
+rm -r folder   # delete directory
 rm -f file     # force delete
 ```
 
-⚠️ No recycle bin — use carefully.
+⚠️ **Warning:** No recycle bin — deletion is permanent.
 
 ---
 
 ## 📁 `rmdir` — Remove Empty Directory
-
-Deletes only empty folders.
 
 ```bash
 rmdir folder_name
@@ -186,148 +164,109 @@ rmdir folder_name
 
 ---
 
-# 🔑 Quick Summary Table
+## 🔑 Quick Summary
 
-| Command | Purpose                       |
-| ------- | ----------------------------- |
-| `pwd`   | Show current directory        |
-| `ls`    | List files and folders        |
-| `cat`   | View file content             |
-| `less`  | View large files page by page |
-| `vi`    | Edit files                    |
-| `mkdir` | Create directories            |
-| `touch` | Create files                  |
-| `cd`    | Change directory              |
-| `rm`    | Delete files/folders          |
-| `rmdir` | Delete empty folders          |
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 2. 🐧 Linux permission commands
-
-## 🔹 1. Basic Idea of Permissions
-
-Every file/folder has **3 types of users**:
-
-* **u (user)** → owner
-* **g (group)** → group members
-* **o (others)** → everyone else
-
-And **3 types of permissions**:
-
-* **r (read)** → view content
-* **w (write)** → modify
-* **x (execute)** → run file / access folder
+| Command | Purpose                |
+| ------- | ---------------------- |
+| pwd     | Show current directory |
+| ls      | List files and folders |
+| cat     | View file content      |
+| less    | Read large files       |
+| vi      | Edit files             |
+| mkdir   | Create directories     |
+| touch   | Create files           |
+| cd      | Change directory       |
+| rm      | Delete files/folders   |
+| rmdir   | Delete empty folders   |
 
 ---
 
-## 🔹 2. Check Permissions
+# 🔐 2. Linux Permissions
 
-Use:
+## 🔹 Permission Basics
+
+### 👥 User Types
+
+| Symbol | Meaning |
+| ------ | ------- |
+| u      | Owner   |
+| g      | Group   |
+| o      | Others  |
+
+### 🔑 Permission Types
+
+| Symbol | Meaning |
+| ------ | ------- |
+| r      | Read    |
+| w      | Write   |
+| x      | Execute |
+
+---
+
+## 🔹 Check Permissions
 
 ```bash
 ls -l
 ```
 
-Example output:
+**Example:**
 
 ```bash
 -rwxr-xr-- 1 user user 1234 Apr 22 file.sh
 ```
 
-Breakdown:
+**Breakdown:**
 
 ```
 -rwxr-xr--
  ||| ||| ||
- ||| ||| └─ others (r--)
- ||| └──── group (r-x)
- └──────── user (rwx)
+ ||| ||| └── Others (r--)
+ ||| └──── Group (r-x)
+ └──────── User (rwx)
 ```
 
 ---
 
-## 🔹 3. Change Permissions with `chmod`
+## 🔹 `chmod` — Change Permissions
 
-### 👉 Method 1: Symbolic (easy to read)
+### 👉 Symbolic Method
 
 ```bash
 chmod u+x file.sh
-```
-
-Add execute permission to user.
-
-More examples:
-
-```bash
-chmod g-w file.txt     # remove write from group
-chmod o+r file.txt     # give read to others
-chmod u+rwx file.sh    # full access to user
-chmod a+x script.sh    # give execute to everyone
+chmod g-w file.txt
+chmod o+r file.txt
+chmod a+x script.sh
 ```
 
 ---
 
-### 👉 Method 2: Numeric (very common)
+### 👉 Numeric Method
 
-Each permission has a number:
+| Permission | Value |
+| ---------- | ----- |
+| r          | 4     |
+| w          | 2     |
+| x          | 1     |
 
-* r = 4
-* w = 2
-* x = 1
-
-Add them:
-
-* 7 = rwx
-* 6 = rw-
-* 5 = r-x
-* 4 = r--
-
-Example:
+### 🔹 Examples
 
 ```bash
-chmod 755 file.sh
-```
-
-Meaning:
-
-* user = 7 (rwx)
-* group = 5 (r-x)
-* others = 5 (r-x)
-
-More examples:
-
-```bash
-chmod 644 file.txt   # rw-r--r--
-chmod 777 file.sh    # full access (not recommended ⚠️)
-chmod 600 secret.txt # only owner can read/write
+chmod 755 file.sh   # rwxr-xr-x
+chmod 644 file.txt  # rw-r--r--
+chmod 600 secret.txt
+chmod 777 file.sh   # ⚠️ not recommended
 ```
 
 ---
 
-## 🔹 4. Change Ownership with `chown`
+## 🔹 `chown` — Change Ownership
 
 ```bash
 chown user file.txt
-```
-
-Change user + group:
-
-```bash
 chown user:group file.txt
 ```
 
-Example:
+**Example:**
 
 ```bash
 chown junaid:developers project.txt
@@ -335,7 +274,7 @@ chown junaid:developers project.txt
 
 ---
 
-## 🔹 5. Change Group Only (`chgrp`)
+## 🔹 `chgrp` — Change Group
 
 ```bash
 chgrp developers file.txt
@@ -343,12 +282,12 @@ chgrp developers file.txt
 
 ---
 
-## 🔹 6. Special Tips (Important 🔥)
+## 🔹 Important Tips 🔥
 
-* For **folders**:
+* For directories:
 
-  * `x` = permission to enter the folder
-* Use `-R` for recursive:
+  * `x` = permission to enter
+* Use recursive flag for folders:
 
 ```bash
 chmod -R 755 myfolder
@@ -356,16 +295,13 @@ chmod -R 755 myfolder
 
 ---
 
-## 🔹 7. Quick Cheat Sheet
+## ⚡ Permission Cheat Sheet
 
-| Command           | Meaning         |
-| ----------------- | --------------- |
-| `chmod 755 file`  | rwxr-xr-x       |
-| `chmod 644 file`  | rw-r--r--       |
-| `chmod +x file`   | make executable |
-| `chown user file` | change owner    |
-
----
-
+| Command         | Meaning         |
+| --------------- | --------------- |
+| chmod 755 file  | rwxr-xr-x       |
+| chmod 644 file  | rw-r--r--       |
+| chmod +x file   | Make executable |
+| chown user file | Change owner    |
 
 
