@@ -1,1 +1,9 @@
-
+- IP (Internet Protocol): unique address of a device on a network
+- DNS (Domain Name System): translates a domain name to an IP address
+- NAT (Network Address Translation): converts a private IP address to a public IP address
+- Ping: test network connectivity between devices
+- Traceroute: show the path packets take to a destination
+- Port: logical endpoint for communication (like 80 for web)
+- SSH (Secure Shell): secure remote access to a server
+- Firewall: control incoming and outgoing network traffic
+- nslookup (Name Server Lookup): এর মাধ্যমে আপনি কোনো ডোমেইনের IP অ্যাড্রেস জানতে পারেন, বা কোনো IP অ্যাড্রেসের ডোমেইন নাম জানতে পারেন।
