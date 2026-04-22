@@ -213,9 +213,9 @@ rmdir folder_name
 
 
 
+# 2. 🐧 Linux permission commands
 
-
-# 🔹 2. Basic Idea of Permissions
+## 🔹 1. Basic Idea of Permissions
 
 Every file/folder has **3 types of users**:
 
