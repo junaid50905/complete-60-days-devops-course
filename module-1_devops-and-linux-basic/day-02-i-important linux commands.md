@@ -1,4 +1,4 @@
-# 🐧 File System Navigation & Manipulation
+# 1. 🐧 File System Navigation & Manipulation
 
 ---
 
@@ -200,5 +200,172 @@ rmdir folder_name
 | `cd`    | Change directory              |
 | `rm`    | Delete files/folders          |
 | `rmdir` | Delete empty folders          |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 🔹 2. Basic Idea of Permissions
+
+Every file/folder has **3 types of users**:
+
+* **u (user)** → owner
+* **g (group)** → group members
+* **o (others)** → everyone else
+
+And **3 types of permissions**:
+
+* **r (read)** → view content
+* **w (write)** → modify
+* **x (execute)** → run file / access folder
+
+---
+
+## 🔹 2. Check Permissions
+
+Use:
+
+```bash
+ls -l
+```
+
+Example output:
+
+```bash
+-rwxr-xr-- 1 user user 1234 Apr 22 file.sh
+```
+
+Breakdown:
+
+```
+-rwxr-xr--
+ ||| ||| ||
+ ||| ||| └─ others (r--)
+ ||| └──── group (r-x)
+ └──────── user (rwx)
+```
+
+---
+
+## 🔹 3. Change Permissions with `chmod`
+
+### 👉 Method 1: Symbolic (easy to read)
+
+```bash
+chmod u+x file.sh
+```
+
+Add execute permission to user.
+
+More examples:
+
+```bash
+chmod g-w file.txt     # remove write from group
+chmod o+r file.txt     # give read to others
+chmod u+rwx file.sh    # full access to user
+chmod a+x script.sh    # give execute to everyone
+```
+
+---
+
+### 👉 Method 2: Numeric (very common)
+
+Each permission has a number:
+
+* r = 4
+* w = 2
+* x = 1
+
+Add them:
+
+* 7 = rwx
+* 6 = rw-
+* 5 = r-x
+* 4 = r--
+
+Example:
+
+```bash
+chmod 755 file.sh
+```
+
+Meaning:
+
+* user = 7 (rwx)
+* group = 5 (r-x)
+* others = 5 (r-x)
+
+More examples:
+
+```bash
+chmod 644 file.txt   # rw-r--r--
+chmod 777 file.sh    # full access (not recommended ⚠️)
+chmod 600 secret.txt # only owner can read/write
+```
+
+---
+
+## 🔹 4. Change Ownership with `chown`
+
+```bash
+chown user file.txt
+```
+
+Change user + group:
+
+```bash
+chown user:group file.txt
+```
+
+Example:
+
+```bash
+chown junaid:developers project.txt
+```
+
+---
+
+## 🔹 5. Change Group Only (`chgrp`)
+
+```bash
+chgrp developers file.txt
+```
+
+---
+
+## 🔹 6. Special Tips (Important 🔥)
+
+* For **folders**:
+
+  * `x` = permission to enter the folder
+* Use `-R` for recursive:
+
+```bash
+chmod -R 755 myfolder
+```
+
+---
+
+## 🔹 7. Quick Cheat Sheet
+
+| Command           | Meaning         |
+| ----------------- | --------------- |
+| `chmod 755 file`  | rwxr-xr-x       |
+| `chmod 644 file`  | rw-r--r--       |
+| `chmod +x file`   | make executable |
+| `chown user file` | change owner    |
+
+---
+
 
 
