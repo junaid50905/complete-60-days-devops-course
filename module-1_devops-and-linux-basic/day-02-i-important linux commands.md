@@ -1,4 +1,10 @@
-# 📁 1. File System Navigation & Manipulation
+# 📁 Linux File System & Permissions Guide
+
+A beginner-friendly guide to essential Linux commands for file system navigation, manipulation, and permissions.
+
+---
+
+# 📂 1. File System Navigation & Manipulation
 
 ## 📍 `pwd` — Print Working Directory
 
@@ -18,7 +24,7 @@ pwd
 
 ## 📂 `ls` — List Directory Contents
 
-Shows files and directories.
+Lists files and directories.
 
 ```bash
 ls
@@ -27,9 +33,9 @@ ls
 ### 🔹 Common Options
 
 ```bash
-ls -l    # detailed list (permissions, size, date)
-ls -a    # include hidden files
-ls -la   # combine both
+ls -l    # Detailed list (permissions, size, date)
+ls -a    # Include hidden files
+ls -la   # Combine both
 ```
 
 💡 Tip: `ll` is often an alias for `ls -l`
@@ -54,7 +60,7 @@ cat file1.txt file2.txt > merged.txt
 
 ## 📄 `less` — Read Large Files
 
-Opens file in a scrollable view.
+Opens a file in a scrollable view.
 
 ```bash
 less file.txt
@@ -132,9 +138,9 @@ cd folder_name
 ### 🔹 Shortcuts
 
 ```bash
-cd ..   # go back
-cd ~    # home directory
-cd /    # root directory
+cd ..   # Go back
+cd ~    # Home directory
+cd /    # Root directory
 ```
 
 ---
@@ -148,8 +154,8 @@ rm file.txt
 ### 🔹 Options
 
 ```bash
-rm -r folder   # delete directory
-rm -f file     # force delete
+rm -r folder   # Delete directory
+rm -f file     # Force delete
 ```
 
 ⚠️ **Warning:** No recycle bin — deletion is permanent.
@@ -169,7 +175,7 @@ rmdir folder_name
 | Command | Purpose                |
 | ------- | ---------------------- |
 | pwd     | Show current directory |
-| ls      | List files and folders |
+| ls      | List files & folders   |
 | cat     | View file content      |
 | less    | Read large files       |
 | vi      | Edit files             |
@@ -193,6 +199,8 @@ rmdir folder_name
 | g      | Group   |
 | o      | Others  |
 
+---
+
 ### 🔑 Permission Types
 
 | Symbol | Meaning |
@@ -203,7 +211,7 @@ rmdir folder_name
 
 ---
 
-## 🔹 Check Permissions
+## 🔍 Check Permissions
 
 ```bash
 ls -l
@@ -215,7 +223,7 @@ ls -l
 -rwxr-xr-- 1 user user 1234 Apr 22 file.sh
 ```
 
-**Breakdown:**
+### 🔎 Breakdown
 
 ```
 -rwxr-xr--
@@ -227,7 +235,7 @@ ls -l
 
 ---
 
-## 🔹 `chmod` — Change Permissions
+## 🔧 `chmod` — Change Permissions
 
 ### 👉 Symbolic Method
 
@@ -254,12 +262,12 @@ chmod a+x script.sh
 chmod 755 file.sh   # rwxr-xr-x
 chmod 644 file.txt  # rw-r--r--
 chmod 600 secret.txt
-chmod 777 file.sh   # ⚠️ not recommended
+chmod 777 file.sh   # ⚠️ Not recommended
 ```
 
 ---
 
-## 🔹 `chown` — Change Ownership
+## 👤 `chown` — Change Ownership
 
 ```bash
 chown user file.txt
@@ -274,7 +282,7 @@ chown junaid:developers project.txt
 
 ---
 
-## 🔹 `chgrp` — Change Group
+## 👥 `chgrp` — Change Group
 
 ```bash
 chgrp developers file.txt
@@ -282,16 +290,20 @@ chgrp developers file.txt
 
 ---
 
-## 🔹 Important Tips 🔥
-
-* For directories:
-
-  * `x` = permission to enter
-* Use recursive flag for folders:
+## 🔁 Recursive Permissions
 
 ```bash
 chmod -R 755 myfolder
 ```
+
+---
+
+## 🔥 Important Tips
+
+* For directories:
+
+  * `x` = permission to enter
+* Use recursive flag (`-R`) carefully
 
 ---
 
@@ -303,5 +315,90 @@ chmod -R 755 myfolder
 | chmod 644 file  | rw-r--r--       |
 | chmod +x file   | Make executable |
 | chown user file | Change owner    |
+
+---
+
+# 👑 3. `chown` — Change Owner (Detailed)
+
+## 🔹 What is `chown`?
+
+`chown` = **Change owner of a file or folder**
+
+---
+
+## 🔹 Basic Syntax
+
+```bash
+chown user file
+```
+
+**Example:**
+
+```bash
+sudo chown junaid file.txt
+```
+
+👉 Now `junaid` owns the file
+
+---
+
+## 🔹 Change User + Group
+
+```bash
+sudo chown user:group file
+```
+
+**Example:**
+
+```bash
+sudo chown junaid:developers file.txt
+```
+
+---
+
+## 🔹 Change Only Group
+
+```bash
+sudo chown :group file
+```
+
+**Example:**
+
+```bash
+sudo chown :developers file.txt
+```
+
+---
+
+## 🔹 Recursive for Folders
+
+```bash
+sudo chown -R user:group folder/
+```
+
+👉 Changes ownership for everything inside the folder
+
+---
+
+## 🔹 When to Use `chown`
+
+* Fix **permission issues**
+* Transfer file ownership
+* Configure servers (e.g., web apps)
+
+---
+
+## ⚠️ Important Notes
+
+* Usually requires `sudo`
+* Incorrect ownership can break applications
+
+---
+
+## 🧠 Memory Trick
+
+👉 **`chown` = "who owns the file"**
+
+---
 
 
