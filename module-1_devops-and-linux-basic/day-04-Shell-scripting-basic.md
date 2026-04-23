@@ -1,7 +1,7 @@
 ### Day-04- Shell Script for devops with hands on example
 
 ### 🧠 What is Bash Scripting? 
-Bash scripting is a way to write a sequence of Linux/Unix commands in a file, and execute them all at once to automate repetitive tasks like deployments, monitoring, backups, etc.
+Bash scripting is a way to write a sequence of Linux/Unix commands in a file, and execute them all at once to automate repetitive tasks like deployments, monitoring, backups, etc. That means, Bash Scripting: Bash shell ব্যবহার করে একাধিক কমান্ড লিখে অটোমেটিকভাবে কাজ করানোর পদ্ধতি (automation)
 
 ### Get your shell
 ```sh
