@@ -10,3 +10,4 @@
 - curl: client url
 - wget (web get): wget is used to download files from the web.
 - scp (secure copy protocol): SCP copies files securely between local and remote systems over SSH.
+- dig: domin name query
