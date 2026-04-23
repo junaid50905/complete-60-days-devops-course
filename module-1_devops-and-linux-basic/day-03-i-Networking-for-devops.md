@@ -7,3 +7,6 @@
 - SSH (Secure Shell): secure remote access to a server
 - Firewall: control incoming and outgoing network traffic
 - nslookup (Name Server Lookup): এর মাধ্যমে আপনি কোনো ডোমেইনের IP অ্যাড্রেস জানতে পারেন, বা কোনো IP অ্যাড্রেসের ডোমেইন নাম জানতে পারেন।
+- curl: client url
+- wget (web get): wget is used to download files from the web.
+- scp (secure copy protocol): SCP copies files securely between local and remote systems over SSH.
